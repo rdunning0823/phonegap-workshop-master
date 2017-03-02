@@ -14,19 +14,18 @@ var app = {
     },
     
     showAlert: function (message, title) {
-        alert('showAlert() ENTER');
         if (navigator.notification) {
+            alert('showing native alert next');
             navigator.notification.alert(message, null, title, 'OK');
         } else {
+            alert('showing browser alert next');
             alert(title ? (title + ": " + message) : message);
         }
     },
 
     initialize: function() {
         this.store = new WebSqlStore(function() {
-            alert('callback function ENTER');
             app.showAlert('Store Initialized', 'Info');
-            alert('callback function EXIT');
         });
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
     }
