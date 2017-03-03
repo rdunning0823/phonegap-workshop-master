@@ -15,8 +15,10 @@ var app = {
     
     showAlert: function (message, title) {
         if (navigator.notification) {
+            alert('about to show native alert');
             navigator.notification.alert(message, null, title, 'OK');
         } else {
+            alert('about to show webpage alert');
             alert(title ? (title + ": " + message) : message);
         }
     },
