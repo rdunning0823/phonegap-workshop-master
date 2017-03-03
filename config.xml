@@ -7,6 +7,9 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
+    <feature name="Notification">
+    <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
